@@ -1,0 +1,31 @@
+{% extends 'gdmoney/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border='1px solid black;' style='width:50%'>
+		<tr>
+			<th>Name</th>
+			<th>Fine</th>
+            <th>Money Earned</th>
+            <th>Total</th>
+            <th>Balance</th>
+		</tr>
+		{% for student in students %}
+		<tr>
+			<td>{{student.name}}</td>
+			<td>{{student.fine}}</td>
+            <td>{{student.money_earned}}</td>
+            <td>{{student.total}}</td>
+            <td>{{student.balance}}</td>
+		</tr>
+        {% endfor %}
+	</table>
+</body>
+</html>
+
+{% endblock %}

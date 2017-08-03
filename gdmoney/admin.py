@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.contrib import admin
+
+from gdmoney.models import GdMoney
+
+class GdMoneyAdmin(admin.ModelAdmin):
+    list_display = ['name', 'fine', 'money_earned']
+    list_editable = ['money_earned', 'money_earned']
+    class Meta:
+        model = GdMoney
+
+admin.site.register(GdMoney, GdMoneyAdmin)
